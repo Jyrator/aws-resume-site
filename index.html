@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ejiro Sakutu — Cloud Solutions Architect</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #f0f4f8; color: #1a202c; }
+    header {
+      background: linear-gradient(135deg, #1a365d, #2b6cb0);
+      color: white; padding: 50px 40px; text-align: center;
+    }
+    header h1 { font-size: 2.5em; letter-spacing: 1px; }
+    header p.tagline { font-size: 1.1em; margin-top: 8px; color: #bee3f8; }
+    header .contact { margin-top: 16px; font-size: 0.95em; color: #e2e8f0; }
+    header .contact a { color: #90cdf4; text-decoration: none; margin: 0 8px; }
+    .container { max-width: 960px; margin: 40px auto; padding: 0 20px; }
+    .section { background: white; border-radius: 10px; padding: 30px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+    .section h2 { font-size: 1.3em; color: #2b6cb0; border-bottom: 2px solid #bee3f8; padding-bottom: 8px; margin-bottom: 18px; text-transform: uppercase; letter-spacing: 1px; }
+    .content { line-height: 1.8; color: #4a5568; white-space: pre-wrap; }
+    .loading { color: #a0aec0; font-style: italic; }
+    .chatbot-btn {
+      display: inline-block;
+      background: #2b6cb0;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.95em;
+      margin-top: 16px;
+      transition: background 0.2s;
+    }
+    .chatbot-btn:hover { background: #1a365d; }
+    footer { text-align: center; padding: 30px; color: #a0aec0; font-size: 0.85em; }
+
+    /* Admin Panel */
+    .admin-toggle {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #2b6cb0;
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 0.9em;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+    .admin-panel {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+    }
+    .admin-panel.open { display: flex; }
+    .admin-box {
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      width: 90%;
+      max-width: 600px;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    .admin-box h2 { color: #1a365d; margin-bottom: 20px; }
+    .admin-box select, .admin-box textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 0.95em;
+      margin-bottom: 16px;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .admin-box textarea { height: 200px; resize: vertical; }
+    .admin-box select:focus, .admin-box textarea:focus { border-color: #2b6cb0; outline: none; }
+    .admin-buttons { display: flex; gap: 12px; }
+    .btn-save {
+      background: #2b6cb0;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95em;
+      flex: 1;
+    }
+    .btn-save:hover { background: #1a365d; }
+    .btn-close {
+      background: #e2e8f0;
+      color: #4a5568;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95em;
+    }
+    .btn-close:hover { background: #cbd5e0; }
+    .admin-msg { margin-top: 12px; padding: 10px; border-radius: 8px; font-size: 0.9em; text-align: center; }
+    .admin-msg.success { background: #c6f6d5; color: #276749; }
+    .admin-msg.error { background: #fed7d7; color: #c53030; }
+    .login-box { text-align: center; }
+    .login-box input {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 0.95em;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .login-box input:focus { border-color: #2b6cb0; outline: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Ejiroghene Rockson Sakutu</h1>
+  <p class="tagline">Cloud Solutions Architect | AWS | Generative AI | Serverless Architecture</p>
+  <div class="contact">
+    Johannesburg, South Africa &nbsp;|&nbsp;
+    +27 65 567 4843 &nbsp;|&nbsp;
+    <a href="mailto:ejirosaks@gmail.com">ejirosaks@gmail.com</a> &nbsp;|&nbsp;
+    <a href="https://linkedin.com/in/ejiro-sakutu-30b54928" target="_blank">LinkedIn</a>
+  </div>
+  <a href="https://d3ipadtt6x7vlf.cloudfront.net" target="_blank" class="chatbot-btn">
+    🤖 Chat with my AI Assistant
+  </a>
+</header>
+
+<div class="container">
+  <div class="section">
+    <h2>Professional Summary</h2>
+    <div class="content loading" id="summary">Loading...</div>
+  </div>
+  <div class="section">
+    <h2>Core Technical Skills</h2>
+    <div class="content loading" id="skills">Loading...</div>
+  </div>
+  <div class="section">
+    <h2>Cloud Projects</h2>
+    <div class="content loading" id="projects">Loading...</div>
+  </div>
+  <div class="section">
+    <h2>Professional Experience</h2>
+    <div class="content loading" id="experience">Loading...</div>
+  </div>
+  <div class="section">
+    <h2>Certifications</h2>
+    <div class="content loading" id="certifications">Loading...</div>
+  </div>
+  <div class="section">
+    <h2>Education</h2>
+    <div class="content loading" id="education">Loading...</div>
+  </div>
+</div>
+
+<footer>
+  <p>Hosted on AWS S3 | Delivered via CloudFront | Powered by DynamoDB | © 2025 Ejiroghene Rockson Sakutu</p>
+  <p style="margin-top: 10px; font-size: 0.9em; color: #718096;">
+    👁️ This page has been visited <span id="visitorCount" style="color: #2b6cb0; font-weight: bold;">...</span> times
+  </p>
+</footer>
+
+<!-- Admin Toggle Button -->
+<button class="admin-toggle" onclick="toggleAdmin()">⚙️ Admin</button>
+
+<!-- Admin Panel -->
+<div class="admin-panel" id="adminPanel">
+  <div class="admin-box">
+    <!-- Login Screen -->
+    <div id="loginScreen" class="login-box">
+      <h2>🔐 Admin Login</h2>
+      <p style="color:#718096; margin-bottom:16px;">Enter your admin key to edit your resume</p>
+      <input type="password" id="adminKeyInput" placeholder="Enter admin key" />
+      <button class="btn-save" onclick="adminLogin()">Login</button>
+      <button class="btn-close" onclick="toggleAdmin()" style="margin-top:10px; width:100%;">Cancel</button>
+      <div id="loginMsg"></div>
+    </div>
+
+    <!-- Edit Screen -->
+    <div id="editScreen" style="display:none;">
+      <h2>✏️ Edit Resume</h2>
+      <select id="sectionSelect" onchange="loadSectionContent()">
+        <option value="summary">Professional Summary</option>
+        <option value="skills">Core Technical Skills</option>
+        <option value="projects">Cloud Projects</option>
+        <option value="experience">Professional Experience</option>
+        <option value="certifications">Certifications</option>
+        <option value="education">Education</option>
+      </select>
+      <textarea id="sectionContent" placeholder="Edit content here..."></textarea>
+      <div class="admin-buttons">
+        <button class="btn-save" onclick="saveSection()">💾 Save Changes</button>
+        <button class="btn-close" onclick="toggleAdmin()">Close</button>
+      </div>
+      <div id="adminMsg"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const API_URL = 'https://4r6p5gbie4.execute-api.us-east-1.amazonaws.com/resume';
+  const COUNTER_URL = 'https://uocvvqzuc3.execute-api.us-east-1.amazonaws.com/count';
+  const ADMIN_KEY = 'ejiro-admin-2025';
+  let resumeData = {};
+  let isLoggedIn = false;
+
+  // Load resume on page load
+  async function loadResume() {
+    try {
+      const response = await fetch(API_URL);
+      resumeData = await response.json();
+      document.getElementById('summary').textContent = resumeData.summary || 'Not available';
+      document.getElementById('skills').textContent = resumeData.skills || 'Not available';
+      document.getElementById('projects').textContent = resumeData.projects || 'Not available';
+      document.getElementById('experience').textContent = resumeData.experience || 'Not available';
+      document.getElementById('certifications').textContent = resumeData.certifications || 'Not available';
+      document.getElementById('education').textContent = resumeData.education || 'Not available';
+      document.querySelectorAll('.content').forEach(el => el.classList.remove('loading'));
+    } catch (error) {
+      console.error('Error loading resume:', error);
+    }
+  }
+
+  // Visitor Counter
+  async function updateVisitorCount() {
+    try {
+      const response = await fetch(COUNTER_URL);
+      const data = await response.json();
+      document.getElementById('visitorCount').textContent = data.count;
+    } catch (error) {
+      console.error('Counter error:', error);
+    }
+  }
+
+  function toggleAdmin() {
+    const panel = document.getElementById('adminPanel');
+    panel.classList.toggle('open');
+    if (!isLoggedIn) {
+      document.getElementById('loginScreen').style.display = 'block';
+      document.getElementById('editScreen').style.display = 'none';
+    }
+  }
+
+  function adminLogin() {
+    const key = document.getElementById('adminKeyInput').value;
+    if (key === ADMIN_KEY) {
+      isLoggedIn = true;
+      document.getElementById('loginScreen').style.display = 'none';
+      document.getElementById('editScreen').style.display = 'block';
+      loadSectionContent();
+    } else {
+      document.getElementById('loginMsg').innerHTML =
+        '<div class="admin-msg error">❌ Incorrect admin key</div>';
+    }
+  }
+
+  function loadSectionContent() {
+    const section = document.getElementById('sectionSelect').value;
+    document.getElementById('sectionContent').value = resumeData[section] || '';
+  }
+
+  async function saveSection() {
+    const section = document.getElementById('sectionSelect').value;
+    const content = document.getElementById('sectionContent').value;
+    const msgEl = document.getElementById('adminMsg');
+
+    try {
+      const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-admin-key': ADMIN_KEY
+        },
+        body: JSON.stringify({ section, content })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        resumeData[section] = content;
+        document.getElementById(section).textContent = content;
+        msgEl.innerHTML = '<div class="admin-msg success">✅ ' + data.message + '</div>';
+      } else {
+        msgEl.innerHTML = '<div class="admin-msg error">❌ ' + data.error + '</div>';
+      }
+    } catch (error) {
+      msgEl.innerHTML = '<div class="admin-msg error">❌ Connection error. Please try again.</div>';
+    }
+  }
+
+  // Initialize
+  loadResume();
+  updateVisitorCount();
+</script>
+</body>
+</html>
