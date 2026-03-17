@@ -4,8 +4,8 @@
 ![AWS Portfolio Architecture](ejiro-sakutu-aws-architecture.png)
 
 ## Live Projects
-- 📄 [Resume Website](https://d2wwi6wx69tjrn.cloudfront.net)
-- 🤖 [AI Chatbot](https://d3ipadtt6x7vlf.cloudfront.net)
+-  [Resume Website](https://d2wwi6wx69tjrn.cloudfront.net)
+-  [AI Chatbot](https://d3ipadtt6x7vlf.cloudfront.net)
 
 ## AWS Services Used
 EC2 | S3 | Lambda | DynamoDB | API Gateway | CloudFront | Bedrock | IAM | ACM | CloudWatch | GitHub Actions
