@@ -22,3 +22,6 @@ User → CloudFront → EC2 (Apache) → Resume HTML
 - Apache web server setup via user data
 - CloudFront distribution with custom origin
 - Security group rules for web traffic
+
+## Architecture Diagram
+

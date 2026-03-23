@@ -19,3 +19,6 @@ A centralised CloudWatch dashboard (ejiro-aws-portfolio) monitoring all portfoli
 - CloudWatch metric filters and alarms
 - SNS notification integration
 - Proactive monitoring strategy
+
+## Architecture Diagram
+

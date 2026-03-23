@@ -21,3 +21,6 @@ Page Load → API Gateway → Lambda → DynamoDB (atomic increment) → Return 
 - Lambda function with DynamoDB SDK calls
 - CORS configuration on API Gateway
 - Real-time data display on frontend
+
+## Architecture Diagram
+

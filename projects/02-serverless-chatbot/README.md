@@ -24,3 +24,6 @@ User → API Gateway → Lambda → Bedrock (Nova Micro)
 - Amazon Bedrock foundation model invocation
 - API Gateway Lambda proxy integration
 - S3 static website hosting with CloudFront
+
+## Architecture Diagram
+

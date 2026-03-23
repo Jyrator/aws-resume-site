@@ -23,3 +23,6 @@ User uploads image → API Gateway → Lambda → S3 (store) → Rekognition (an
 - S3 temporary object storage pattern
 - Multi-step Lambda orchestration
 - AI/ML service integration without model training
+
+## Architecture Diagram
+

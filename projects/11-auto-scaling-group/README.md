@@ -24,3 +24,6 @@ Internet → ALB (ejiro-alb) → ASG (2-4 x EC2 t3.micro)
 - ALB health checks and traffic distribution
 - Self-healing infrastructure (ASG replaces failed instances)
 - IMDSv2-compliant EC2 metadata access
+
+## Architecture Diagram
+

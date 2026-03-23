@@ -28,3 +28,6 @@ Internet → ALB (ejiro-ecs-alb) → ECS Fargate Tasks (×2)
 - Fargate serverless compute (no EC2 required)
 - ALB target group with IP address target type
 - Centralised container logging via CloudWatch
+
+## Architecture Diagram
+

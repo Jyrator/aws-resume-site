@@ -22,3 +22,6 @@ git push → GitHub Actions → AWS CLI sync to S3 → CloudFront invalidation
 
 ## Workflow File
 `.github/workflows/deploy.yml`
+
+## Architecture Diagram
+

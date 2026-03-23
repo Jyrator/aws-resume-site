@@ -21,3 +21,6 @@ Contact Form → API Gateway → Lambda → SES → ejirosaks@gmail.com
 - Lambda form validation and sanitisation
 - API Gateway CORS configuration
 - Serverless email pipeline
+
+## Architecture Diagram
+

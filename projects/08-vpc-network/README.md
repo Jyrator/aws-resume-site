@@ -23,3 +23,6 @@ Internet → IGW → Public Subnet (Web Tier)
 - NAT Gateway for private subnet outbound access
 - Route table configuration
 - Security group layering (web tier vs DB tier)
+
+## Architecture Diagram
+

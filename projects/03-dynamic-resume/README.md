@@ -25,3 +25,6 @@ Admin Panel → API Gateway → Lambda → DynamoDB (write)
 - Serverless CRUD operations via Lambda
 - Password-protected admin functionality
 - Dynamic content rendering from API responses
+
+## Architecture Diagram
+
