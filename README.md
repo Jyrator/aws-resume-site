@@ -29,7 +29,8 @@ Building a hands-on AWS portfolio while preparing for AWS Cloud Practitioner and
 | 10 | [AI Image Analyser](./projects/10-image-analyser/) | Rekognition, Lambda, S3, API Gateway | [Live](https://d3ipadtt6x7vlf.cloudfront.net/rekognition.html) |
 | 11 | [Auto Scaling Group with ALB](./projects/11-auto-scaling-group/) | EC2, ALB, ASG, CloudWatch | — |
 | 12 | [Containers with ECS and Fargate](./projects/12-ecs-fargate/) | ECS, Fargate, ECR, ALB, CloudWatch | — |
-
+| 15 | [WAF and CloudFront Security Layer](./projects/15-waf-cloudfront/) | WAF, CloudFront, Shield Standard, CloudWatch | [Live](https://d2wwi6wx69tjrn.cloudfront.net) |
+| 16 | [S3 Cross-Region Replication and Lifecycle](./projects/16-s3-replication/) | S3, IAM, CloudWatch | — |
 ---
 
 ## AWS Services Used
